@@ -1,0 +1,21 @@
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.logoIcon {
+  margin-right: var(--spacer-1);
+  width: 28px;
+  height: 28px;
+}
+
+.main {
+  margin-block-start: var(--spacer-12);
+  text-align: center;
+
+  @media (min-width: 425px) {
+    max-width: 375px;
+    margin-inline: auto;
+  }
+}
