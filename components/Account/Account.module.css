@@ -1,0 +1,85 @@
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.logoIcon {
+  margin-right: var(--spacer-1);
+  width: 28px;
+  height: 28px;
+}
+
+.main {
+  margin-block-start: var(--spacer-12);
+  text-align: center;
+
+  @media (min-width: 425px) {
+    max-width: 375px;
+    margin-inline: auto;
+  }
+}
+
+.heading {
+  font-size: var(--x-large);
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 4px;
+  display: block;
+  padding-block: var(--spacer-1);
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn .icon {
+  width: 16px;
+  height: 16px;
+  margin-right: var(--spacer-1);
+}
+
+.oauthBtn {
+  background-color: var(--white);
+  border-color: var(--gainsboro);
+  margin-block-start: var(--spacer-2);
+}
+
+.form {
+  border-top: 1px solid var(--gainsboro);
+  margin-block-start: var(--spacer-3);
+  padding-block-start: var(--spacer-3);
+}
+
+.label {
+  display: block;
+  text-align: left;
+  font-size: var(--small);
+}
+
+.emailInput {
+  background-color: var(--powder);
+  border: 1px solid var(--gainsboro);
+  border-radius: 4px;
+  display: block;
+  font-size: var(--base-font-size);
+  margin-block-start: var(--spacer-1);
+  padding: var(--spacer-1);
+  width: 100%;
+}
+
+.submitBtn {
+  background-color: var(--lavender);
+  color: var(--red-salsa);
+  font-weight: 500;
+  margin-top: var(--spacer-2);
+}
+
+.forgotPassword {
+  margin-top: var(--spacer-2);
+  text-decoration: underline;
+}
