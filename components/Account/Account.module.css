@@ -28,6 +28,7 @@
   background-color: transparent;
   border: 1px solid;
   border-radius: 4px;
+  cursor: pointer;
   display: block;
   padding-block: var(--spacer-1);
   display: flex;

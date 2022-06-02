@@ -2,7 +2,11 @@ import styles from "./Container.module.css";
 
 import { FC } from "react";
 
-const Container: FC = ({ children }) => {
+type ContainerProps = {
+  children: JSX.Element;
+};
+
+const Container: FC<ContainerProps> = ({ children }) => {
   return <div className={styles.container}>{children}</div>;
 };
 
