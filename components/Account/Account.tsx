@@ -3,9 +3,10 @@ import styles from "./Account.module.css";
 import AppleLogo from "@/components/Icons/AppleLogo";
 import GoogleLogo from "@/components/Icons/GoogleLogo";
 import Logo from "@/components/Icons/Logo";
+import db from "@/utils";
 import Head from "next/head";
 import Link from "next/link";
-import { FC } from "react";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
 
 export enum AccountType {
   NEW,
@@ -26,6 +27,23 @@ const AccountTypeOptions = {
 };
 
 const Account: FC<AccountProps> = ({ type }) => {
+  const [email, setEmail] = useState("");
+
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setEmail(evt.target.value);
+  };
+
+  const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    const { user, session, error } = await db.auth.signUp({
+      email,
+      password: "super-secure-p@ss",
+    });
+
+    console.log({ user, session, error });
+  };
+
   return (
     <>
       <Head>
@@ -52,13 +70,16 @@ const Account: FC<AccountProps> = ({ type }) => {
           Continue with Apple
         </button>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={handleSubmit}>
           <label className={styles.label}>
             Email
             <input
               type="email"
               placeholder="Enter your email address..."
               className={styles.emailInput}
+              value={email}
+              onChange={handleChange}
+              required
             />
           </label>
 
